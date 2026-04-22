@@ -252,49 +252,58 @@
   .expect {
     background: var(--cream-light);
   }
-  .expect-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
-    max-width: 1200px;
+  .expect-inner {
+    max-width: 1100px;
     margin: 0 auto;
   }
-  .expect-img {
-    aspect-ratio: 4/5;
-    border-radius: 2px;
+  .expect-head {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 70px;
   }
-  .expect-text h2 {
-    margin-bottom: 24px;
+  .expect-head h2 em { font-style: italic; color: var(--sage-deep); }
+  .expect-head p {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.75;
   }
-  .expect-text h2 em { font-style: italic; color: var(--sage-deep); }
-  .expect-step {
+  .expect-flow {
     display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--border-light);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+    margin-bottom: 50px;
   }
-  .expect-step:last-child { border-bottom: none; }
-  .expect-step .n {
+  .expect-step-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .expect-step-card .n {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 32px;
+    font-size: 56px;
     color: var(--sage-deep);
     line-height: 1;
+    margin-bottom: 16px;
+    display: block;
   }
-  .expect-step h4 {
+  .expect-step-card h4 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     color: var(--forest-dark);
   }
-  .expect-step p {
+  .expect-step-card p {
     font-size: 15px;
     line-height: 1.7;
     color: var(--muted);
   }
+  .expect-bottom { text-align: center; }
 
   /* === SPECIALS TEASER === */
   .specials {
@@ -434,7 +443,8 @@
   }
 
   @media (max-width: 900px) {
-    .hero-grid, .expect-grid, .resources-grid, .location-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-grid, .resources-grid, .location-grid { grid-template-columns: 1fr; gap: 50px; }
+    .expect-flow { grid-template-columns: 1fr; }
     .hero-deal { position: static; margin-top: -20px; }
     .services-grid, .specials-grid { grid-template-columns: 1fr; }
     .trust-item { font-size: 15px; }
@@ -552,33 +562,31 @@
 
 <!-- WHAT TO EXPECT -->
 <section class="expect">
-  <div class="expect-grid">
-    <div class="expect-img img-slot clean-linen"></div>
-    <div class="expect-text">
+  <div class="expect-inner">
+    <div class="expect-head">
       <div class="eyebrow">Your first visit</div>
       <h2>What to <em>expect</em> on day one.</h2>
-      <div class="expect-step">
-        <div class="n">01</div>
-        <div>
-          <h4>Arrive 15 minutes early</h4>
-          <p>We'll take a brief case history, answer any questions, and walk you through the process before we begin.</p>
-        </div>
+      <p>First-time clients usually have more questions than anything else. Here's exactly what the hour looks like — so you can walk in knowing what to expect.</p>
+    </div>
+    <div class="expect-flow">
+      <div class="expect-step-card">
+        <span class="n">01</span>
+        <h4>Arrive 15 minutes early</h4>
+        <p>We'll take a brief case history, answer any questions, and walk you through the process before we begin.</p>
       </div>
-      <div class="expect-step">
-        <div class="n">02</div>
-        <div>
-          <h4>A gentle, private session</h4>
-          <p>You'll lie comfortably on a table while warm filtered water gently cleanses the colon. The entire process is odorless, closed-system, and monitored by your certified therapist.</p>
-        </div>
+      <div class="expect-step-card">
+        <span class="n">02</span>
+        <h4>A gentle, private session</h4>
+        <p>You'll lie comfortably on a table while warm filtered water gently cleanses the colon. Completely odorless, closed-system, and monitored by your certified therapist.</p>
       </div>
-      <div class="expect-step">
-        <div class="n">03</div>
-        <div>
-          <h4>Replenish before you leave</h4>
-          <p>We finish with a complimentary multi-mineral drink and a probiotic supplement to help restore your intestinal flora.</p>
-        </div>
+      <div class="expect-step-card">
+        <span class="n">03</span>
+        <h4>Replenish before you leave</h4>
+        <p>We finish with a complimentary multi-mineral drink and a probiotic supplement to help restore your intestinal flora.</p>
       </div>
-      <a href="service-colonics.html" class="cta-ghost" style="margin-top: 24px; display: inline-block;">Read more about colonics →</a>
+    </div>
+    <div class="expect-bottom">
+      <a href="service-colonics.html" class="cta-ghost">Read more about colonics →</a>
     </div>
   </div>
 </section>
