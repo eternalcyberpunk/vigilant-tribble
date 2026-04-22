@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claremont Colonic & Nutrient Resource Clinic · Colon Hydrotherapy in Claremont Village</title>
+<meta name="description" content="A quiet sanctuary for cleansing in Claremont Village. Colon hydrotherapy, lymphatic detox, and whole-body wellness with I-ACT certified therapists.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === HERO with Wednesday special === */
+  .hero {
+    padding: 60px 40px 80px;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    background: var(--cream);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: var(--forest);
+    color: var(--cream);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: #c9d4b8;
+    border-radius: 50%;
+  }
+  .hero-left h1 {
+    font-size: clamp(48px, 6.5vw, 92px);
+    line-height: 0.95;
+    margin-bottom: 28px;
+    color: var(--forest-dark);
+  }
+  .hero-left h1 em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+  .hero-lead {
+    font-size: 18px;
+    line-height: 1.75;
+    max-width: 460px;
+    margin-bottom: 36px;
+    color: var(--muted);
+  }
+  .hero-ctas { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .hero-fineprint {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 20px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+  }
+
+  .hero-right { position: relative; }
+  .hero-img {
+    aspect-ratio: 4/5;
+    border-radius: 2px;
+  }
+  .hero-deal {
+    position: absolute;
+    bottom: -32px;
+    left: -32px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    max-width: 300px;
+    box-shadow: 0 12px 40px rgba(45, 58, 46, 0.08);
+  }
+  .hero-deal .label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 10px;
+  }
+  .hero-deal .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-deal .desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  /* === TRUST STRIP === */
+  .trust {
+    background: var(--cream-deep);
+    padding: 40px;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .trust-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .trust-item .sep {
+    width: 4px;
+    height: 4px;
+    background: var(--sage-deep);
+    border-radius: 50%;
+  }
+
+  /* === SERVICES OVERVIEW === */
+  .services-section {
+    background: var(--cream);
+  }
+  .services-head {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 70px;
+  }
+  .services-head h2 em { font-style: italic; color: var(--sage-deep); }
+  .services-head p { font-size: 17px; margin-top: 20px; color: var(--muted); line-height: 1.75; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .svc-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 36px 32px;
+    background: var(--cream-light);
+    border: 1px solid var(--border-light);
+    transition: all 0.25s;
+    position: relative;
+  }
+  .svc-card:hover {
+    background: var(--cream-deep);
+    border-color: var(--sage);
+    transform: translateY(-2px);
+  }
+  .svc-card.featured {
+    background: var(--forest);
+    color: var(--cream);
+    border-color: var(--forest);
+  }
+  .svc-card.featured:hover {
+    background: var(--forest-dark);
+  }
+  .svc-card .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--sage-deep);
+    margin-bottom: 14px;
+  }
+  .svc-card.featured .num { color: var(--sage); }
+  .svc-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    color: var(--forest-dark);
+    line-height: 1.15;
+  }
+  .svc-card.featured h3 { color: var(--cream); }
+  .svc-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 20px;
+    min-height: 90px;
+  }
+  .svc-card.featured p { color: #c9d4b8; }
+  .svc-card .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--sage-deep);
+  }
+  .svc-card.featured .price { color: var(--cream); }
+  .svc-card .arrow {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    font-size: 18px;
+    color: var(--sage-deep);
+  }
+  .svc-card.featured .arrow { color: var(--cream); }
+
+  /* === PHILOSOPHY === */
+  .philosophy {
+    background: var(--forest-dark);
+    color: var(--cream);
+    text-align: center;
+  }
+  .philosophy .eyebrow { color: var(--sage); }
+  .philosophy blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    max-width: 920px;
+    margin: 0 auto 40px;
+    color: var(--cream-light);
+    letter-spacing: -0.01em;
+  }
+  .philosophy blockquote em { color: var(--sage); font-style: normal; }
+  .philosophy .attribution {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* === WHAT TO EXPECT === */
+  .expect {
+    background: var(--cream-light);
+  }
+  .expect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .expect-img {
+    aspect-ratio: 4/5;
+    border-radius: 2px;
+  }
+  .expect-text h2 {
+    margin-bottom: 24px;
+  }
+  .expect-text h2 em { font-style: italic; color: var(--sage-deep); }
+  .expect-step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .expect-step:last-child { border-bottom: none; }
+  .expect-step .n {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--sage-deep);
+    line-height: 1;
+  }
+  .expect-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    color: var(--forest-dark);
+  }
+  .expect-step p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* === SPECIALS TEASER === */
+  .specials {
+    background: var(--cream);
+  }
+  .specials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .special-card {
+    padding: 40px 32px;
+    background: var(--cream-light);
+    border: 1px solid var(--border-light);
+    text-align: center;
+  }
+  .special-card .tag {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 14px;
+  }
+  .special-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .special-card h3 em { font-style: italic; color: var(--sage-deep); }
+  .special-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .special-card .amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--forest);
+    margin-bottom: 20px;
+  }
+
+  /* === RESOURCES PREVIEW === */
+  .resources-preview {
+    background: var(--cream-deep);
+  }
+  .resources-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .resources-text h2 em { font-style: italic; color: var(--sage-deep); }
+  .resources-text p { font-size: 17px; line-height: 1.75; color: var(--muted); margin: 20px 0 30px; }
+  .resources-list {
+    list-style: none;
+    padding: 0;
+    background: var(--cream-light);
+    border: 1px solid var(--border);
+  }
+  .resources-list li {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .resources-list li:last-child { border-bottom: none; }
+  .resources-list li a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--forest-dark);
+    text-decoration: none;
+    font-style: italic;
+  }
+  .resources-list li a:hover { color: var(--sage-deep); }
+  .resources-list li .meta {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* === LOCATION === */
+  .location-block {
+    background: var(--cream-light);
+  }
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .location-text h2 { margin-bottom: 24px; }
+  .location-text h2 em { font-style: italic; color: var(--sage-deep); }
+  .location-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--muted);
+  }
+  .location-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 30px 0;
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .location-detail .label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 8px;
+  }
+  .location-detail .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--forest-dark);
+    line-height: 1.5;
+  }
+  .location-detail .val a { color: var(--forest-dark); text-decoration: none; }
+  .location-img {
+    aspect-ratio: 4/3;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid, .expect-grid, .resources-grid, .location-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-deal { position: static; margin-top: -20px; }
+    .services-grid, .specials-grid { grid-template-columns: 1fr; }
+    .trust-item { font-size: 15px; }
+    .location-details { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-page="home">
+
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="dot"></span>Discount Wednesdays</div>
+      <h1>A quiet <em>sanctuary</em> for cleansing in Claremont Village.</h1>
+      <p class="hero-lead">Colon hydrotherapy, lymphatic detox, and whole-body wellness. All treatments performed by I-ACT certified therapists using the most advanced FDA-approved equipment available.</p>
+      <div class="hero-ctas">
+        <a href="#" class="cta cta-primary">Book Appointment</a>
+        <a href="services.html" class="cta-ghost">See all services →</a>
+      </div>
+      <div class="hero-fineprint">Every Wednesday, a first colonic session is $65 for new clients.</div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img img-slot building"></div>
+      <div class="hero-deal">
+        <div class="label">Wednesdays only</div>
+        <div class="price">$65</div>
+        <div class="desc">First colonic session for new clients.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">I-ACT certified therapists<span class="sep"></span></div>
+    <div class="trust-item">FDA-approved equipment<span class="sep"></span></div>
+    <div class="trust-item">Triple-filtration closed system<span class="sep"></span></div>
+    <div class="trust-item">Serving Claremont since 2008</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+    <div class="services-head">
+      <div class="eyebrow">Services</div>
+      <h2>How we <em>help</em> you cleanse.</h2>
+      <p>Colon hydrotherapy is our foundation, but it's only part of what we do. Every service pairs beautifully with the others — ask your therapist which combination makes sense for where you are.</p>
+    </div>
+
+    <div class="services-grid">
+      <a href="service-colonics.html" class="svc-card featured">
+        <div class="num">01 — Core service</div>
+        <h3>Colon <em>Hydrotherapy</em></h3>
+        <p>Our closed-system, triple-filtered colonics use warm filtered water to gently cleanse the full length of the large intestine. 100% odorless, completely private.</p>
+        <div class="price">From $95 / session</div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="service-stub.html" class="svc-card">
+        <div class="num">02 —</div>
+        <h3>Brazilian <em>Lymphatic</em> Detoxification</h3>
+        <p>A specialized massage technique that reduces bloating, stimulates the immune system, and supports whole-body drainage. Pairs beautifully with colonics.</p>
+        <div class="price">$170 / session</div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="service-stub.html" class="svc-card">
+        <div class="num">03 —</div>
+        <h3><em>Infrared</em> Sauna</h3>
+        <p>Deep-tissue heat that supports circulation, detoxification through the skin, and recovery. Pair with a colonic for a full reset day.</p>
+        <div class="price">$50 / session</div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="service-stub.html" class="svc-card">
+        <div class="num">04 —</div>
+        <h3>Detox <em>Foot</em> Bath</h3>
+        <p>An ionic bath that supports the body's natural detox pathways through the feet. Relaxing, grounding, and surprisingly noticeable.</p>
+        <div class="price">$50 / session</div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="service-stub.html" class="svc-card">
+        <div class="num">05 —</div>
+        <h3>Ear <em>Coning</em></h3>
+        <p>A traditional practice using a cotton-linen cone to draw excess wax and debris gently from the ear canal. Quiet and quick.</p>
+        <div class="price">$35 / session</div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="services.html" class="svc-card">
+        <div class="num">—</div>
+        <h3>See all <em>services</em> & prices</h3>
+        <p>Including colonoscopy prep, post-colonic support, Magic Fit, packages, and everything else we offer at the clinic.</p>
+        <div class="price">Full menu →</div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container-narrow">
+    <div class="eyebrow">What we believe</div>
+    <blockquote>There is no greater <em>gift</em> you can give yourself than the gift of health, energy, and vitality.</blockquote>
+    <div class="attribution">— Our philosophy</div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect">
+  <div class="expect-grid">
+    <div class="expect-img img-slot clean-linen"></div>
+    <div class="expect-text">
+      <div class="eyebrow">Your first visit</div>
+      <h2>What to <em>expect</em> on day one.</h2>
+      <div class="expect-step">
+        <div class="n">01</div>
+        <div>
+          <h4>Arrive 15 minutes early</h4>
+          <p>We'll take a brief case history, answer any questions, and walk you through the process before we begin.</p>
+        </div>
+      </div>
+      <div class="expect-step">
+        <div class="n">02</div>
+        <div>
+          <h4>A gentle, private session</h4>
+          <p>You'll lie comfortably on a table while warm filtered water gently cleanses the colon. The entire process is odorless, closed-system, and monitored by your certified therapist.</p>
+        </div>
+      </div>
+      <div class="expect-step">
+        <div class="n">03</div>
+        <div>
+          <h4>Replenish before you leave</h4>
+          <p>We finish with a complimentary multi-mineral drink and a probiotic supplement to help restore your intestinal flora.</p>
+        </div>
+      </div>
+      <a href="service-colonics.html" class="cta-ghost" style="margin-top: 24px; display: inline-block;">Read more about colonics →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section class="specials">
+  <div class="container">
+    <div class="services-head">
+      <div class="eyebrow">Specials</div>
+      <h2>Save with <em>packages</em> and gifts.</h2>
+    </div>
+    <div class="specials-grid">
+      <div class="special-card">
+        <div class="tag">Every Wednesday</div>
+        <h3>Discount <em>Wednesdays</em></h3>
+        <div class="amount">$65</div>
+        <p>A first colonic session for new clients, every Wednesday. Credit card reservation required.</p>
+        <a href="#" class="cta cta-outline">Book now</a>
+      </div>
+      <div class="special-card">
+        <div class="tag">Package</div>
+        <h3>Six-<em>session</em> package</h3>
+        <div class="amount">$510 · Save $60</div>
+        <p>The ideal starter for first-time clients. Six sessions over several weeks, plus one additional service included.</p>
+        <a href="services.html" class="cta cta-outline">See packages</a>
+      </div>
+      <div class="special-card">
+        <div class="tag">Gifts</div>
+        <h3>Gift <em>cards</em></h3>
+        <div class="amount">Any amount</div>
+        <p>The gift of a reset. Gift cards available in any amount and redeemable toward any service.</p>
+        <a href="tel:9096039200" class="cta cta-outline">Call to purchase</a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="specials.html" class="cta cta-dark">See all specials & packages</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="resources-preview">
+  <div class="resources-grid">
+    <div class="resources-text">
+      <div class="eyebrow">Wellness library</div>
+      <h2>Cleansing is more than <em>one</em> appointment.</h2>
+      <p>Our resource library collects the practices, diets, and habits our therapists have seen transform clients' lives over the years — all free to read.</p>
+      <a href="resources.html" class="cta-ghost">Browse all resources →</a>
+    </div>
+    <ul class="resources-list">
+      <li>
+        <a href="resources.html">Alkalize your body</a>
+        <span class="meta">Reading guide</span>
+      </li>
+      <li>
+        <a href="resources.html">The candida diet</a>
+        <span class="meta">Reading guide</span>
+      </li>
+      <li>
+        <a href="resources.html">Food combining</a>
+        <span class="meta">Reading guide</span>
+      </li>
+      <li>
+        <a href="resources.html">Dry skin brushing</a>
+        <span class="meta">Practice</span>
+      </li>
+      <li>
+        <a href="resources.html">About parasites</a>
+        <span class="meta">Reading guide</span>
+      </li>
+      <li>
+        <a href="resources.html">Recipes</a>
+        <span class="meta">Library</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-block">
+  <div class="location-grid">
+    <div class="location-text">
+      <div class="eyebrow">Find us</div>
+      <h2>On Indian Hill, in <em>Claremont</em> Village.</h2>
+      <p>We're on the corner of Indian Hill Boulevard and 4th Street, a short walk from the Village's restaurants and boutiques. Plenty of street parking and a quiet entrance.</p>
+      <div class="location-details">
+        <div class="location-detail">
+          <div class="label">Address</div>
+          <div class="val">370 N. Indian Hill Blvd<br>Claremont, CA 91711</div>
+        </div>
+        <div class="location-detail">
+          <div class="label">Call us</div>
+          <div class="val"><a href="tel:9096039200">(909) 603-9200</a></div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#" class="cta cta-primary">Book Appointment</a>
+        <a href="contact.html" class="cta cta-outline">Contact us</a>
+      </div>
+    </div>
+    <div class="location-img img-slot building"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

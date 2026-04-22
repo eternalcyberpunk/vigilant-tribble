@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Details · Claremont Colonic & Nutrient Resource Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .stub-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 40px;
+    background: var(--cream-light);
+  }
+  .stub-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .breadcrumb {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--sage-deep); text-decoration: none; }
+  .stub-hero h1 {
+    font-size: clamp(44px, 5.5vw, 72px);
+    line-height: 0.98;
+    margin-bottom: 24px;
+  }
+  .stub-hero h1 em { font-style: italic; color: var(--sage-deep); }
+  .stub-hero p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 460px;
+    margin-bottom: 24px;
+  }
+  .stub-hero .note {
+    padding: 20px 24px;
+    background: var(--cream-deep);
+    border-left: 2px solid var(--forest);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    max-width: 460px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  .stub-ctas { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .stub-img { aspect-ratio: 4/5; border-radius: 2px; }
+
+  .related {
+    background: var(--cream);
+    padding: 80px 40px;
+    border-top: 1px solid var(--border-light);
+  }
+  .related h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .related h2 em { font-style: italic; color: var(--sage-deep); }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .related-card {
+    text-decoration: none;
+    color: inherit;
+    padding: 24px;
+    background: var(--cream-light);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s;
+  }
+  .related-card:hover { background: var(--cream-deep); border-color: var(--sage); }
+  .related-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--forest-dark);
+    margin-bottom: 8px;
+  }
+  .related-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .stub-grid { grid-template-columns: 1fr; gap: 40px; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-page="service">
+
+<div id="site-header"></div>
+
+<section class="stub-hero">
+  <div class="stub-grid">
+    <div>
+      <div class="breadcrumb"><a href="services.html">Services</a> · This service</div>
+      <h1>Details <em>on the way.</em></h1>
+      <p>A full page for this service is being written — including what it is, who it's for, what to expect, and how it pairs with our other offerings.</p>
+      <div class="note">
+        In the meantime, the fastest way to get your questions answered is to call us at (909) 603-9200. Real pricing is on our services page.
+      </div>
+      <div class="stub-ctas">
+        <a href="#" class="cta cta-primary">Book Appointment</a>
+        <a href="services.html" class="cta-ghost">See services & prices →</a>
+      </div>
+    </div>
+    <div class="stub-img img-slot clean-linen"></div>
+  </div>
+</section>
+
+<section class="related">
+  <h2>Other <em>services</em></h2>
+  <div class="related-grid">
+    <a href="service-colonics.html" class="related-card">
+      <h4>Colon Hydrotherapy</h4>
+      <p>Our foundational service — safe, closed-system, and completely odorless.</p>
+    </a>
+    <a href="services.html" class="related-card">
+      <h4>All services</h4>
+      <p>Browse everything we offer with current pricing.</p>
+    </a>
+    <a href="specials.html" class="related-card">
+      <h4>Specials</h4>
+      <p>Discount Wednesdays, packages, and monthly deals.</p>
+    </a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

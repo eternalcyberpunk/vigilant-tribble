@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colon Hydrotherapy · Claremont Colonic & Nutrient Resource Clinic</title>
+<meta name="description" content="Colon hydrotherapy with I-ACT certified therapists in Claremont Village. Closed-system, triple-filtered, 100% odorless. From $95.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .svc-hero {
+    padding: 40px 40px 80px;
+    background: var(--cream-light);
+  }
+  .svc-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .breadcrumb {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--sage-deep); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--forest); }
+  .svc-hero h1 {
+    font-size: clamp(44px, 5.5vw, 72px);
+    line-height: 0.98;
+    margin-bottom: 20px;
+  }
+  .svc-hero h1 em { font-style: italic; color: var(--sage-deep); }
+  .svc-hero .lead {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 30px;
+    max-width: 460px;
+  }
+  .svc-hero-meta {
+    display: flex;
+    gap: 40px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 30px 0;
+  }
+  .svc-hero-meta .item .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 4px;
+  }
+  .svc-hero-meta .item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--forest-dark);
+    font-style: italic;
+  }
+  .svc-hero-img { aspect-ratio: 4/5; border-radius: 2px; }
+
+  /* Overview */
+  .overview { background: var(--cream); }
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .overview h2 { margin-bottom: 20px; }
+  .overview h2 em { font-style: italic; color: var(--sage-deep); }
+  .overview-right p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .overview-right p.muted { color: var(--muted); }
+  .overview-right strong { color: var(--forest-dark); font-weight: 500; }
+
+  /* How it works — process */
+  .process { background: var(--cream-deep); }
+  .process-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+  .process-head h2 em { font-style: italic; color: var(--sage-deep); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .process-step .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 48px;
+    color: var(--sage-deep);
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .process-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--forest-dark);
+  }
+  .process-step .time {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 12px;
+  }
+  .process-step p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* Pricing */
+  .price-block { background: var(--cream); }
+  .price-head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  .price-head h2 em { font-style: italic; color: var(--sage-deep); }
+  .price-table {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--cream-light);
+    border: 1px solid var(--border);
+  }
+  .p-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    padding: 22px 32px;
+    border-bottom: 1px solid var(--border-light);
+    align-items: baseline;
+  }
+  .p-row:last-child { border-bottom: none; }
+  .p-row h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--forest-dark);
+    margin-bottom: 4px;
+  }
+  .p-row p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .p-row .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--forest);
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .p-row .savings {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* FAQ */
+  .svc-faq { background: var(--cream-deep); }
+  .faq-head { text-align: center; margin-bottom: 50px; }
+  .faq-head h2 em { font-style: italic; color: var(--sage-deep); }
+  .faq-list { max-width: 820px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+  .faq-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--forest-dark);
+    margin-bottom: 12px;
+  }
+  .faq-a {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .faq-a strong { color: var(--forest-dark); font-weight: 500; }
+
+  /* Prep block */
+  .prep {
+    background: var(--cream-light);
+  }
+  .prep-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .prep h2 em { font-style: italic; color: var(--sage-deep); }
+  .prep-list {
+    list-style: none;
+    padding: 0;
+  }
+  .prep-list li {
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--border-light);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    padding-left: 32px;
+    position: relative;
+  }
+  .prep-list li:last-child { border-bottom: none; }
+  .prep-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 16px;
+    height: 1px;
+    background: var(--sage-deep);
+  }
+
+  /* CTA */
+  .svc-cta { background: var(--forest-dark); color: var(--cream); text-align: center; padding: 100px 40px; }
+  .svc-cta .eyebrow { color: var(--sage); }
+  .svc-cta h2 { color: var(--cream-light); margin-bottom: 24px; }
+  .svc-cta h2 em { color: var(--sage); font-style: italic; }
+  .svc-cta p { color: #b4c0a8; max-width: 520px; margin: 0 auto 40px; font-size: 17px; line-height: 1.75; }
+
+  @media (max-width: 900px) {
+    .svc-hero-grid, .overview-grid, .prep-grid { grid-template-columns: 1fr; gap: 40px; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .p-row { grid-template-columns: 1fr; }
+    .p-row .price { margin-top: 8px; }
+  }
+</style>
+</head>
+<body data-page="service">
+
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-grid">
+    <div>
+      <div class="breadcrumb"><a href="services.html">Services</a> · Colon Hydrotherapy</div>
+      <h1>Colon <em>Hydrotherapy.</em></h1>
+      <p class="lead">A safe, effective method of cleansing the large intestine through gentle flushing with warm filtered water. No drugs, no chemicals, no odor.</p>
+      <div class="svc-hero-meta">
+        <div class="item">
+          <div class="label">First visit</div>
+          <div class="val">~1 hour</div>
+        </div>
+        <div class="item">
+          <div class="label">Return visits</div>
+          <div class="val">~50 minutes</div>
+        </div>
+        <div class="item">
+          <div class="label">Starting at</div>
+          <div class="val">$95</div>
+        </div>
+      </div>
+      <a href="#" class="cta cta-primary">Book Appointment</a>
+    </div>
+    <div class="svc-hero-img img-slot clean-linen"></div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="overview-grid">
+    <div>
+      <div class="eyebrow">What it is</div>
+      <h2>Warm water. <em>Gently</em> flushed. Full colon.</h2>
+    </div>
+    <div class="overview-right">
+      <p>Colon hydrotherapy — also called colon lavage or a colonic — is a <strong>safe, drug-free method</strong> of removing waste from the large intestine through repeated, gentle flushing with warm filtered water.</p>
+      <p class="muted">During a session, you lie comfortably on a table. Warm water flows in through a small, disposable speculum and returns out through a separate waste tube that carries away impacted feces, mucus, and toxins. You'll see the waste pass through a special viewing window — the entire system is closed and <strong>completely odorless</strong>.</p>
+      <p class="muted">We use state-of-the-art FDA-approved equipment with a triple-filtration system — carbon and UV filters, plus fully disposable tubing. Every session is monitored from start to finish by a therapist certified by the International Association of Colon Hydrotherapists (I-ACT), using a slow-fill technique for maximum comfort.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-head">
+    <div class="eyebrow">What to expect</div>
+    <h2>From <em>arrival</em> to replenishment.</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <span class="num">01</span>
+      <div class="time">Arrival · 15 min early</div>
+      <h4>Brief consultation</h4>
+      <p>First-time clients fill out a brief case history and meet the therapist. We'll answer any questions and walk you through the process before starting.</p>
+    </div>
+    <div class="process-step">
+      <span class="num">02</span>
+      <div class="time">Session · 30–40 min</div>
+      <h4>The colonic itself</h4>
+      <p>You'll lie comfortably on a table with complimentary aromatherapy. The therapist monitors water temperature and flow throughout, adjusting based on your comfort.</p>
+    </div>
+    <div class="process-step">
+      <span class="num">03</span>
+      <div class="time">Rest · A few minutes</div>
+      <h4>Settle and breathe</h4>
+      <p>A brief rest period to let your body re-regulate. Most clients feel immediately lighter and more energized, though some experience brief tiredness as toxins release.</p>
+    </div>
+    <div class="process-step">
+      <span class="num">04</span>
+      <div class="time">Finish · 10 min</div>
+      <h4>Replenish</h4>
+      <p>Before you leave, we serve a complimentary multi-mineral vitamin drink plus a probiotic supplement to help restore your intestinal flora.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="price-block">
+  <div class="price-head">
+    <div class="eyebrow">Pricing</div>
+    <h2>What it <em>costs.</em></h2>
+  </div>
+  <div class="price-table">
+    <div class="p-row">
+      <div>
+        <h4>Single session</h4>
+        <p>Your first visit, or any standalone session after your initial series.</p>
+      </div>
+      <div class="price">$95</div>
+    </div>
+    <div class="p-row">
+      <div>
+        <h4>Three-session package <span class="savings">Save $10</span></h4>
+        <p>A short series to see how your body responds.</p>
+      </div>
+      <div class="price">$275</div>
+    </div>
+    <div class="p-row">
+      <div>
+        <h4>Four-session package <span class="savings">Save $25</span></h4>
+        <p>Four sessions plus one additional service (foot bath, sauna, or ear coning).</p>
+      </div>
+      <div class="price">$355</div>
+    </div>
+    <div class="p-row">
+      <div>
+        <h4>Six-session package <span class="savings">Save $60</span></h4>
+        <p>The recommended starter for new clients. Six sessions over several weeks plus one additional service.</p>
+      </div>
+      <div class="price">$510</div>
+    </div>
+    <div class="p-row">
+      <div>
+        <h4>Discount Wednesdays</h4>
+        <p>First colonic session for new clients. Credit card reservation required.</p>
+      </div>
+      <div class="price">$65</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ — uses real Q&A from existing site -->
+<section class="svc-faq">
+  <div class="faq-head">
+    <div class="eyebrow">Honest answers</div>
+    <h2>Questions we hear <em>every</em> week.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Is colon hydrotherapy safe?</div>
+      <div class="faq-a">Yes. We use FDA-approved equipment with disposable, single-use components and sterile procedures — there's no danger of contamination. In fact, a professional colonic is significantly safer than a home enema. All sessions are performed by I-ACT certified therapists who monitor water pressure (never more than 2 psi) and temperature throughout.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it hurt?</div>
+      <div class="faq-a">No. Clients assist with the initial insertion to ensure comfort, and the filling pressure is very low (minimum 1/4 psi, max 2 psi). The water temperature and flow are constantly adjusted with your feedback. Most clients describe the experience as mildly pressurizing, not painful.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does it compare to an enema?</div>
+      <div class="faq-a">An enema only reaches the lower part of the colon. Colon hydrotherapy <strong>bathes the full length of the colon</strong> — approximately five to five and a half feet — over a longer period, which also helps rehydrate the colon and soften any hardened waste adhering to the walls.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many sessions will I need?</div>
+      <div class="faq-a">It varies by person and depends on your overall health and lifestyle. <strong>For first-time clients we recommend an initial series of six to ten visits over several weeks.</strong> After that, most clients return for a seasonal cleanse — four times a year, with the change of each season, works well for many people.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is it habit-forming?</div>
+      <div class="faq-a">No. The point of cleansing is to <em>allow the colon to rest and rejuvenate</em> so it can restore its natural peristalsis. The colon can't heal when it's constantly working to eliminate accumulated waste, gas, and toxins.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can constipation occur even if I have regular bowel movements?</div>
+      <div class="faq-a">Yes. Mucoid plaque and trapped gas can interfere with natural peristaltic action, resulting in incomplete though frequent bowel movements. This buildup can cause problems throughout the digestive tract and the rest of the body.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Should I see my doctor first?</div>
+      <div class="faq-a">It's always a good idea to consult your doctor, especially if you have any medical conditions, but a medical examination isn't required for most people. Certain medical conditions do make colon hydrotherapy inadvisable — we'll ask about your health history at your first visit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does my menstrual period affect the treatment?</div>
+      <div class="faq-a">No. If anything, a colonic during your period can be helpful — your body is already in a cleansing mode, and flushing the colon can reduce abdominal pressure and cramping. Your menstrual flow won't interfere with the treatment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I work after a session?</div>
+      <div class="faq-a">Yes, in most cases. Many clients report feeling refreshed and energized. If you're actively detoxifying from other things, you may feel tired for a few hours as your body releases toxins — if that's a concern for a particular day, we recommend scheduling in the evening or on a weekend.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will this disturb my normal gut flora?</div>
+      <div class="faq-a">Briefly, yes — cleansing reduces both beneficial flora and electrolytes. That's why <strong>every session ends with a complimentary electrolyte drink and a probiotic supplement</strong> to help reintroduce healthy flora. You can also support recovery at home with kefir or Essential Duo.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PREP -->
+<section class="prep">
+  <div class="prep-grid">
+    <div>
+      <div class="eyebrow">Prep for your visit</div>
+      <h2>A little <em>preparation</em> goes far.</h2>
+      <p style="color: var(--muted); font-size: 16px; line-height: 1.75; margin-top: 20px;">None of this is strictly required, but each of these will meaningfully improve your experience and the effectiveness of your session.</p>
+    </div>
+    <ul class="prep-list">
+      <li>The day before, eat fruit and vegetables if possible — this softens everything and makes the session easier.</li>
+      <li>Drink 8–10 glasses of water the day before and the day of your visit.</li>
+      <li>Avoid eating for two hours before your appointment — we do gentle abdominal massage during the session.</li>
+      <li>Skip carbonated beverages the day before — they add gas to the colon.</li>
+      <li>Arrive 15 minutes before your scheduled time, relaxed and unrushed.</li>
+      <li>Wear loose, comfortable clothing — nothing restrictive around the waist.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="svc-cta">
+  <div class="container-narrow">
+    <div class="eyebrow">Ready to schedule</div>
+    <h2>Start with a <em>single</em> session.</h2>
+    <p>First time? Try one session before committing to a package. Wednesdays are $65 for new clients — the easiest way in.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="cta cta-primary">Book Appointment</a>
+      <a href="tel:9096039200" class="cta cta-outline" style="color: var(--cream); border-color: var(--cream);">Call (909) 603-9200</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

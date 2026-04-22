@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Claremont Colonic & Nutrient Resource Clinic</title>
+<meta name="description" content="Visit us at 370 N. Indian Hill Blvd in Claremont Village. Call (909) 603-9200 or email info@claremontcoloniccenter.com.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-main {
+    background: var(--cream);
+    padding: 80px 40px 100px;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .contact-info h2 { margin-bottom: 30px; }
+  .contact-info h2 em { font-style: italic; color: var(--sage-deep); }
+
+  .info-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .info-item:first-of-type { padding-top: 0; }
+  .info-item .label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--sage-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .info-item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--forest-dark);
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .info-item .val a {
+    color: var(--forest-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .info-item .val a:hover { color: var(--sage-deep); border-color: var(--sage-deep); }
+  .info-item .sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.6;
+    font-style: normal;
+  }
+
+  /* Map placeholder */
+  .map-wrap {
+    aspect-ratio: 16/10;
+    margin-top: 40px;
+    background: linear-gradient(135deg, #c9d4b8 0%, #a8b5a0 50%, #7a8a74 100%);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .map-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255,255,255,0.08) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.08) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.08) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+  .map-pin {
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    width: 40px;
+    height: 40px;
+    background: var(--forest);
+    border: 3px solid var(--cream);
+    border-radius: 50% 50% 50% 0;
+    transform: translate(-50%, -100%) rotate(-45deg);
+    box-shadow: 0 8px 16px rgba(45, 58, 46, 0.3);
+  }
+  .map-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--cream);
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    max-width: 280px;
+  }
+  .map-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--forest-dark);
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+  .map-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .map-card a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 1px solid var(--forest);
+    padding-bottom: 2px;
+  }
+
+  /* Contact form */
+  .contact-form {
+    background: var(--cream-light);
+    padding: 50px;
+    border: 1px solid var(--border-light);
+  }
+  .contact-form h2 { margin-bottom: 12px; }
+  .contact-form h2 em { font-style: italic; color: var(--sage-deep); }
+  .contact-form .form-intro {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 30px;
+    line-height: 1.7;
+  }
+  .form-group { margin-bottom: 22px; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--sage-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    font-size: 15px;
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--sage-deep);
+  }
+  .form-group textarea { min-height: 120px; resize: vertical; font-family: inherit; }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .contact-form .cta {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .form-checkbox {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .form-checkbox input { width: auto; margin-top: 3px; }
+
+  /* Hours block */
+  .hours-block {
+    background: var(--cream-deep);
+    padding: 80px 40px;
+  }
+  .hours-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .hours-head h2 em { font-style: italic; color: var(--sage-deep); }
+  .hours-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--cream-light);
+    border: 1px solid var(--border);
+  }
+  .hours-day {
+    padding: 22px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border-light);
+  }
+  .hours-day:last-child { border-right: none; }
+  .hours-day.closed { background: var(--cream-deep); }
+  .hours-day .day {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 8px;
+  }
+  .hours-day .time {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--forest-dark);
+  }
+  .hours-day.closed .time { color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form { padding: 30px; }
+    .form-row { grid-template-columns: 1fr; }
+    .hours-grid { grid-template-columns: 1fr; }
+    .hours-day { border-right: none; border-bottom: 1px solid var(--border-light); }
+  }
+</style>
+</head>
+<body data-page="contact">
+
+<div id="site-header"></div>
+
+<div class="page-header">
+  <div class="eyebrow">Contact</div>
+  <h1>Come <em>see</em> us.</h1>
+  <p>We're in Claremont Village, on the corner of Indian Hill and 4th. The easiest way to reach us is by phone during open hours — we answer most calls ourselves.</p>
+</div>
+
+<section class="contact-main">
+  <div class="contact-grid">
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <h2>How to <em>reach</em> us.</h2>
+
+      <div class="info-item">
+        <div class="label">Address</div>
+        <div class="val">370 N. Indian Hill Blvd<br>Claremont, CA 91711</div>
+        <div class="sub">On the corner of Indian Hill and 4th Street. Plenty of street parking.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="label">Phone (fastest)</div>
+        <div class="val"><a href="tel:9096039200">(909) 603-9200</a></div>
+        <div class="sub">Fastest way to reach us for booking, rescheduling, or questions.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="label">Email</div>
+        <div class="val"><a href="mailto:info@claremontcoloniccenter.com">info@claremontcoloniccenter.com</a></div>
+        <div class="sub">For longer inquiries — we respond within 24 hours.</div>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-wrap">
+        <div class="map-pin"></div>
+        <div class="map-card">
+          <h4>Claremont Colonic</h4>
+          <p>370 N. Indian Hill Blvd<br>Claremont, CA 91711</p>
+          <a href="https://goo.gl/maps/aAfPoTmTiQC4F2or7" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — we\'ll respond within 24 hours.');">
+      <h2>Send a <em>message.</em></h2>
+      <p class="form-intro">Questions about services, pricing, scheduling — anything. We read every message personally and respond within one business day.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>First name</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone (optional)</label>
+        <input type="tel">
+      </div>
+
+      <div class="form-group">
+        <label>What can we help with?</label>
+        <select>
+          <option>Booking a first appointment</option>
+          <option>Question about colonics</option>
+          <option>Package or pricing question</option>
+          <option>Gift card purchase</option>
+          <option>Colonoscopy prep scheduling</option>
+          <option>Something else</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Your message</label>
+        <textarea placeholder="Tell us what you'd like to know."></textarea>
+      </div>
+
+      <label class="form-checkbox">
+        <input type="checkbox">
+        <span>Also subscribe me to the weekly newsletter — seasonal tips, recipes, and reminders.</span>
+      </label>
+
+      <button type="submit" class="cta cta-primary">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours-block">
+  <div class="hours-head">
+    <div class="eyebrow">When we're open</div>
+    <h2>Our <em>hours.</em></h2>
+  </div>
+  <div class="hours-grid">
+    <div class="hours-day">
+      <div class="day">Mon</div>
+      <div class="time">12 – 6</div>
+    </div>
+    <div class="hours-day">
+      <div class="day">Tues</div>
+      <div class="time">9 – 6</div>
+    </div>
+    <div class="hours-day">
+      <div class="day">Wed</div>
+      <div class="time">9 – 7</div>
+    </div>
+    <div class="hours-day">
+      <div class="day">Thurs</div>
+      <div class="time">9 – 6</div>
+    </div>
+    <div class="hours-day">
+      <div class="day">Fri</div>
+      <div class="time">9 – 6</div>
+    </div>
+    <div class="hours-day">
+      <div class="day">Sat</div>
+      <div class="time">9 – 2</div>
+    </div>
+    <div class="hours-day closed">
+      <div class="day">Sun</div>
+      <div class="time">Closed</div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

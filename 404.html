@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found · Claremont Colonic & Nutrient Resource Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .not-found {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    background: var(--cream-light);
+  }
+  .not-found-inner { max-width: 560px; }
+  .not-found .code {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 120px;
+    line-height: 1;
+    color: var(--sage-deep);
+    margin-bottom: 20px;
+  }
+  .not-found h1 {
+    font-size: clamp(36px, 4vw, 52px);
+    margin-bottom: 20px;
+  }
+  .not-found h1 em { font-style: italic; color: var(--sage-deep); }
+  .not-found p {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  .not-found .ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body data-page="">
+
+<div id="site-header"></div>
+
+<section class="not-found">
+  <div class="not-found-inner">
+    <div class="code">404</div>
+    <h1>That page went <em>missing.</em></h1>
+    <p>Which happens. The page you were looking for isn't here. Let's get you somewhere useful.</p>
+    <div class="ctas">
+      <a href="index.html" class="cta cta-primary">Back to home</a>
+      <a href="contact.html" class="cta cta-outline">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>
